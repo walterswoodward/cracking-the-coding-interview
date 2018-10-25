@@ -1,4 +1,4 @@
-// These solutions assume that the input strings are all composed of
+// This solutions assume that the input strings are all composed of
 // alphabetical letters with no spaces/symbols AND that case should be ignored.
 
 // Basic Sort and Compare Method:
