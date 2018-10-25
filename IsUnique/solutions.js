@@ -20,6 +20,7 @@ const brute = str => {
 // 1. Time Complexity: O(N) where N is the length of the input
 // 2. Space Complexity: O(1)
 const sortMethod = (str) => {
+  // Don't forget your Edge Cases!
   let sorted = str.split("").sort()
   for (let i = 0; i < sorted.length; i++) {
     if (sorted[i] === sorted[i + 1]){
