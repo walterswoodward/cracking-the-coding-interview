@@ -1,9 +1,9 @@
 // This problem is REALLY meant to be done in JAVA, as it is relatively simple
 // to implement in javascript. This is a very peculiar problem with very
-// specific parameters. For example your input is a string with exactly the
-// number of additional spaces (OR MORE) at the end of it in order to be able to
-// map the new string WITH spaces replaces with `%20` without running into a
-// array capacity error.
+// specific parameters. Your input is a string with exactly the number of
+// additional spaces (OR MORE) at the end of it in order to be able to map the
+// new string WITH spaces replaced with `%20` without running into a array
+// capacity error.
 
 public class Solution {
 	// // Another way to print URLify is by creating a class Solution 
