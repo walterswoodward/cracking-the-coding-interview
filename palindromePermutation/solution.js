@@ -49,7 +49,7 @@ return true
 // console.log(tallyMod2("abc")) // should be: false
 
 
-// Binary Method:
+// Binary Method: VERY FAST
 const bitVector = (string)=> {
 // Edge Case Stuff:
 let str = string.split("").slice(0).map(letter=> letter.toLowerCase())
