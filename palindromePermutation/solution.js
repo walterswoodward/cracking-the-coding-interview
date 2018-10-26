@@ -44,8 +44,6 @@ for (let k = 0; k < tallyValues.length; k++){
   }
 }
 return true
-
-
 }
 
 // console.log(tallyMod2("DabwAcbaAAAWABBBDBA")) // should be: true
