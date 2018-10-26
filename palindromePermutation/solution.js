@@ -45,6 +45,42 @@ for (let k = 0; k < tallyValues.length; k++){
 }
 return true
 }
-
 // console.log(tallyMod2("DabwAcbaAAAWABBBDBA")) // should be: true
 // console.log(tallyMod2("abc")) // should be: false
+
+
+// Binary Method:
+const bitVector = (string)=> {
+// Edge Case Stuff:
+let str = string.split("").slice(0).map(letter=> letter.toLowerCase())
+const lettersOnly = str.filter(item=> item.charCodeAt() >= 97 && item.charCodeAt()<= 122)
+if (lettersOnly.length !== str.length){
+  return false
+}
+// Create tally
+let tally = []
+for (let i = 0 ; i < str.length; i++){
+  if (tally[str[i]] === undefined){
+    tally[str[i]] = 1
+  } else {
+    tally[str[i]] === 1? tally[str[i]]= 0: tally[str[i]]=1;
+  }
+}
+let tallyValue = parseInt(Object.values(tally).join(""),2)
+console.log(tally)
+console.log(tallyValue)
+
+// Here is the Binary Magic: 
+// 1. 00010000 - 1 = 00001111 
+// 2. `&` Returns a one in each bit position if bits of both operands are ones:
+//    a. 00010000 & 00001111 = 0 
+// 3. So if the following evaluates to 0, then we know that there is only one or
+//    zero letters with an odd number of occurrences
+if (tallyValue & (tallyValue - 1) === 0){
+  return true
+}
+return false
+}
+
+console.log(bitVector("DabwAcbaAAAWABBBDBA")) // should be: true
+// console.log(bitVector("abc")) // should be: false
