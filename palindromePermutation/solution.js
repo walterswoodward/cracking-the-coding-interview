@@ -67,13 +67,14 @@ for (let i = 0 ; i < str.length; i++){
   }
 }
 let tallyValue = parseInt(Object.values(tally).join(""),2)
-console.log(tally)
-console.log(tallyValue)
 
 // Here is the Binary Magic: 
-// 1. 00010000 - 1 = 00001111 
+// 1. Subtracting one from a binary number with only a single one will always
+//    return a binary number with a series of 0's followed by a series of 1's:
+//    00010000 - 1 = 00001111 
+//    0000000100000 = 0000000011111
 // 2. `&` Returns a one in each bit position if bits of both operands are ones:
-//    a. 00010000 & 00001111 = 0 
+//    00010000 & 00001111 = 0 
 // 3. So if the following evaluates to 0, then we know that there is only one or
 //    zero letters with an odd number of occurrences
 if (tallyValue & (tallyValue - 1) === 0){
@@ -82,5 +83,5 @@ if (tallyValue & (tallyValue - 1) === 0){
 return false
 }
 
-console.log(bitVector("DabwAcbaAAAWABBBDBA")) // should be: true
+// console.log(bitVector("DabwAcbaAAAWABBBDBA")) // should be: true
 // console.log(bitVector("abc")) // should be: false
