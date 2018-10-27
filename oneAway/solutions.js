@@ -55,7 +55,7 @@ const mergedSolution = (str1, str2) => {
   let foundDifference = false;
   while (index2 < long.length) {
 
-    if (short.charCodeAt(index1) !== long.charCodeAt(index2)) {
+    if (short[index1] !== long[index2]) {
       if (foundDifference) return false;
       foundDifference = true;
       if (long.length === short.length) {
@@ -69,12 +69,12 @@ const mergedSolution = (str1, str2) => {
   return true;
 };
 
-// Equal
+// // Equal
 // console.log(mergedSolution("pale", "pale"))
-// Replacement
+// // Replacement
 // console.log(mergedSolution("pale", "bale")) // true
 // console.log(mergedSolution("pale", "balt")) // false
-// Insert/Remove
+// // Insert/Remove
 // console.log(mergedSolution("patleg", "pale")); // false
 // console.log(mergedSolution("pa", "pale")); // false
 // console.log(mergedSolution("palet", "pale")); // true 
