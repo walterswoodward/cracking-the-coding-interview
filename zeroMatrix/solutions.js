@@ -28,43 +28,43 @@ const forLoop2Hash = matrix => {
 
 console.log(forLoop2Hash([[1, 2, 3, 4], [5, 0, 7, 8], [9, 10, 11, 0]]));
 
-
 // McDowells Java Solution (LONGER) translated into Javascript:
-const setZeros = (matrix)=> {
+const setZeros = matrix => {
   let row = [];
   let column = [];
 
-  for (let i = 0; i < matrix.length; i++){
-    for(let j = 0; j < matrix[0].length; j++){ // index 0 is okay since we know all rows are same length
-      if (matrix[i][j] == 0){
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[0].length; j++) {
+      // index 0 is okay since we know all rows are same length
+      if (matrix[i][j] == 0) {
         row[i] = true;
-        column[j] = true
+        column[j] = true;
       }
     }
   }
 
-  const nullifyRow = (matrix, row)=>{
-    for (let j = 0; j < matrix[0].length; j++){
-      matrix[row][j] = 0
+  const nullifyRow = (matrix, row) => {
+    for (let j = 0; j < matrix[0].length; j++) {
+      matrix[row][j] = 0;
     }
-  }
+  };
 
-  const nullifyColumn = (matrix, col)=>{
-    for (let i = 0; i < matrix.length; i++){
-      matrix[i][col] = 0
+  const nullifyColumn = (matrix, col) => {
+    for (let i = 0; i < matrix.length; i++) {
+      matrix[i][col] = 0;
     }
-  }
+  };
 
   // Nullify Rows
-  for (let i = 0; i < row.length; i++){
+  for (let i = 0; i < row.length; i++) {
     if (row[i]) nullifyRow(matrix, i);
   }
   // Nullify Columns
-  for (let j = 0; j < column.length; j++){
-    if (column[j]) nullifyColumn(matrix, j)
+  for (let j = 0; j < column.length; j++) {
+    if (column[j]) nullifyColumn(matrix, j);
   }
 
-  return matrix
-}
+  return matrix;
+};
 
-console.log(setZeros([[1, 2, 3, 4], [5, 0, 7, 8], [9, 10, 11, 0]]))
+console.log(setZeros([[1, 2, 3, 4], [5, 0, 7, 8], [9, 10, 11, 0]]));
