@@ -25,7 +25,16 @@
           console.log("You've hit a wall at ["+column+", "+row+"]")
       }
     }
-    traverse(3,0) // Must start on path!
+
+    // Traverse first column of matrix to find entry point
+    let init_c = 0
+    for (let i = 0; i < maze.length; i++){
+        if (maze[i][0] === 1){
+            init_c = i
+            break
+        }
+    }
+    traverse(init_c,0) // Must start on path!
 return answer
    
   }
