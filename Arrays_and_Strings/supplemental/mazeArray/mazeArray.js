@@ -9,15 +9,19 @@
       } else if(maze[column][row] == 1) {
         console.log("We are on a valid path at ["+column+", "+row+"]");
         maze[column][row] = 9;
+        // Down
         if(column < maze.length - 1); {
           this.traverse(column + 1, row);
         } 
+        // Right
         if(row < maze[column].length - 1){
           this.traverse(column, row + 1);
         }
+        // Up
         if(column > 0){
           this.traverse(column - 1, row);
         }
+        // Left
         if(row > 0) {
           this.traverse(column, row - 1);
         }
