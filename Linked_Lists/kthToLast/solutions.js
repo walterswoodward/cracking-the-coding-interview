@@ -5,7 +5,7 @@ class LinkedList {
       value, // short hand for value: value
       next: null
     };
-    // this._length // Having this property and using it would make findNode() less verbose
+    this._length = 1 // Having this property and using it would make findNode() less verbose
   }
 
   insert(value) {
@@ -14,25 +14,25 @@ class LinkedList {
     console.log(this.head)
     if (current === undefined) {
       this.head = newNode.head;
+      this._length++
     }
     while (current.next) {
       current = current.next;
     }
     current.next = newNode.head;
+    this._length++
   }
-  // Finds kth value where k = 0 is the head node, k=1 is this.head.next etc.
+  // Finds kth value where k = 1 returns the last node, k=2 returns the second to last node etc.
   findNode(k) {
     let current = this.head;
     // console.log(current)
-    let counter = 0;
-    if (k < 0){
+    let counter = this._length - k;
+    if (k < 0 || k >= this._length){
       throw new Error("No nodes at given position")
-    } else if (k === 0) {
-      return this.head;
     } else {
-      while (counter !== k){
+      while (counter !== 0){
         console.log(counter)
-        counter++
+        --counter
         current = current.next
       }
       
@@ -48,6 +48,5 @@ const keyCombinationSeq = new LinkedList(1493827);
 keyCombinationSeq.insert(27453896);
 keyCombinationSeq.insert(19673520)
 keyCombinationSeq.insert(83649956)
-console.log(keyCombinationSeq.findNode(0))
-
-// console.log(keyCombinationSeq);
+console.log(keyCombinationSeq.findNode(2))
+console.log(keyCombinationSeq);
