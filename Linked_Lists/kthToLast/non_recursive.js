@@ -31,7 +31,6 @@ class LinkedList {
       throw new Error("No nodes at given position");
     } else {
       while (counter !== 0) {
-        console.log(counter);
         --counter;
         current = current.next;
       }
