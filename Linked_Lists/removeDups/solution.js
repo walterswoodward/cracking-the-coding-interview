@@ -16,7 +16,7 @@ class LinkedList {
     let newNode = new LinkedList(value);
 
     // If this.head.value is undefined e.g. LinkedList exists but is EMPTY
-    if (current.value === undefined) {
+    if (current === undefined) {
       this.head = newNode.head;
     }
     // if LinkedList is NOT empty
