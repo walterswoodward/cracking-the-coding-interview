@@ -27,7 +27,7 @@ class LinkedList {
     let current = this.head;
     // console.log(current)
     let counter = this._length - k;
-    if (k < 0 || k >= this._length) {
+    if (k <= 0 || k > this._length) {
       throw new Error("No nodes at given position");
     } else {
       while (counter !== 0) {
@@ -47,5 +47,5 @@ const keyCombinationSeq = new LinkedList(1493827);
 keyCombinationSeq.insert(27453896);
 keyCombinationSeq.insert(19673520);
 keyCombinationSeq.insert(83649956);
-console.log(keyCombinationSeq.findNode(2));
+console.log(keyCombinationSeq.findNode(1));
 console.log(keyCombinationSeq);
