@@ -5,7 +5,7 @@ class LinkedList {
       value, // short hand for value: value
       next: null
     };
-    this._length = 1 // Having this property and using it would make findNode() less verbose
+    this._length = 1
   }
 
   insert(value) {
