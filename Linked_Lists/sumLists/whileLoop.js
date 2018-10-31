@@ -1,3 +1,4 @@
+// Note: This solution assumes that te difference in length between the inputted Linked Lists is not more than 1 digit.
 class LinkedList {
   constructor(value) {
     (this.value = value), // short hand for value: value
@@ -28,7 +29,7 @@ const sumNodes = (d1, d2) => {
   let node2 = d2;
   let node3 = null;
   let d3 = null;
-  
+
   let ones;
   let carry = 0;
   let sum;
@@ -76,13 +77,29 @@ const sumNodes = (d1, d2) => {
       node2 = node2.next;
     }
   }
+  console.log(node1);
+  console.log(node2);
   // If `carry` has a value after breaking out of the previous while loop, then
   // that means one more node must be added as the last two highest place
   // digit's sum was greater than 10.  In this case, as I have adjusted the
   // inputs to reflect this scenario, although the input nodes (495 and 617) only went to the
   // hundreds place, the output node goes to the thousands (1112).
-  if (carry > 0 && node2 === null) {
-    // per while loop logic ^^, if node2 === null, then node1 also equals null
+  if (carry > 0) {
+    // Edge Case: If node1 is longer than node2
+    if (node1 !== null && node2 === null) {
+      carry += node1.value;
+      // If node2 is longer than node1
+    } else if (node2 !== null && node1 === null) {
+      carry += node2.value;
+    }
+    // Edge case: If node1 + carry OR node2 + carry === 10 (it logically cannot equal any other double digit int)
+    if (carry === 10) {
+      node3.next = new LinkedList(0);
+      d3._length++;
+      node3.next.next = new LinkedList(1);
+      d3._length++;
+      return d3;
+    }
     node3.next = new LinkedList(carry);
     d3._length++;
     return d3;
@@ -94,6 +111,8 @@ const sumNodes = (d1, d2) => {
 const digit1 = new LinkedList(7);
 digit1.insert(1);
 digit1.insert(6);
+digit1.insert(9);
+
 
 const digit2 = new LinkedList(5);
 digit2.insert(9);
