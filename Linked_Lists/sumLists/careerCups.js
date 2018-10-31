@@ -1,3 +1,5 @@
+// Link: https://github.com/careercup/CtCI-6th-Edition-JavaScript/blob/ec307944f9c824376ea36bf9d730b0b709b9a923/chapter02/2.5%20-%20Sum%20Lists/sumLists.js
+
 var LinkedList = function(value) {
   this.value = value;
   this.next = null;
